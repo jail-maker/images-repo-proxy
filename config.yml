@@ -1,0 +1,7 @@
+---
+port: 3003
+# path to public RSA key
+publicKeyPath: 'keys/public.key'
+redirectHost: 'localhost'
+redirectPort: 3002
+
