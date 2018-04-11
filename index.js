@@ -50,7 +50,7 @@ let pk = fs.readFileSync(path.resolve(args['public-key']));
 
 let protectedEPs = [
 
-    {method: 'POST', url: '/images'},
+    {method: 'POST', url: '/images/:user/.*'},
     {method: 'POST', url: '/image-importer'},
 
 ];
@@ -70,6 +70,12 @@ async function isProtected({method: method, url: url}) {
     return false;
 
 }
+
+
+// name: user/image
+// fullname: http://repo.ru/images/user/image
+
+// import: POST ${fullname}
 
 app.use(async (ctx, next) => {
 
